@@ -17,11 +17,13 @@ int main(){
     input = clean_input(input);
 
     Queue queue;
+    char bigram[2];
     int result;
 
     do{
         for (int i = 0; i < input.size();){
-            char bigram[2] = {input[i], input[++i]};
+            bigram[0] = {input[i]};
+            bigram[1] = {input[++i]};
 
             try{
                 if (bigram[1] == '\0'){
@@ -40,11 +42,11 @@ int main(){
     }while(true);
 
     queue.status();
-    cout << endl;
+    cout << endl << endl;
 
     do{
         try{
-            queue.dequeue();
+            queue.dequeue(bigram);
         }catch(underflow_error &err){
             cout << "Error: " << err.what() << endl;
             break;

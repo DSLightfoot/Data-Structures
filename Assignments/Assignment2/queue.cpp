@@ -15,7 +15,7 @@ int Queue::enqueue(const char arr[2]){
     return 0;
 }
 
-int Queue::dequeue(){
+int Queue::dequeue(const char arr[2]){
     // Check if queue is empty
     if (queue.size() <= 0){
         throw underflow_error("Queue is empty");
@@ -37,7 +37,7 @@ int Queue::status(){
 
     cout << "Queue Contents: " << endl;
     for (auto& item: queue){
-        cout << "[" << item << "]" << endl;
+        cout << "[" << item << "] ";
     }
 
     return 0;

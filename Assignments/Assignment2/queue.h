@@ -14,7 +14,7 @@ class Queue{
         vector<string> queue;
     public:
         int enqueue(const char[BIGRAM_SIZE]);
-        int dequeue();
+        int dequeue(const char arr[2]);
         int status();
 
 };
