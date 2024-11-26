@@ -36,7 +36,8 @@ int main() {
         }
     }
     
-    std::cout << "Private Key: " << object.get_private_key() << std::endl << std::endl;
+    std::cout << "Public Key: (n = " << object.n << ", e = " << object.coprime << ")" << std::endl;
+    std::cout << "Private Key: (n = " << object.n << ", d = " << object.get_private_key() << ")" << std::endl << std::endl;
 
     object.encrypt(cleartext);
     object.decrypt();
